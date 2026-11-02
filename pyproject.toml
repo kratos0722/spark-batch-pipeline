@@ -1,0 +1,21 @@
+[project]
+name = "spark-batch-pipeline"
+version = "0.1.0"
+description = "PySpark batch ETL: clean + dedupe orders, incremental loading, daily revenue aggregates to a partitioned warehouse"
+requires-python = ">=3.11"
+dependencies = [
+    "pyspark>=3.5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
